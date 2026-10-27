@@ -57,3 +57,9 @@ Job match combines deterministic keyword overlap with Gemini semantic judgment. 
 ## Deployment target
 
 Deploy `client` to Vercel and `server` to Render or Railway. Set `CLIENT_ORIGIN` to the Vercel domain and `VITE_API_URL` to the deployed server's `/api` URL.
+
+### Render + Vercel configuration
+
+On Render, set `NODE_ENV=production`, set `CLIENT_ORIGIN` to the exact Vercel deployment origin (for example `https://your-app.vercel.app`), and use `npm start` as the start command. Do not include a path or rely on a development `.env` file.
+
+On Vercel, set `VITE_API_URL` to `https://your-render-service.onrender.com/api`, then redeploy the frontend. A Vite environment variable is compiled into the client at build time.
